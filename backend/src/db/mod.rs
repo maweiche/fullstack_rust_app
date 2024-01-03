@@ -1,3 +1,14 @@
+pub mod owner;
+pub mod pet;
+
+use crate::{error, error::Error::*, DBCon, DBPool};
+use mobc::Pool;
+use mobc_postgres::{tokio_postgres, PgConnectionManager};
+use std::fs;
+use std::str::FromStr;
+use std::time::Duration;
+use tokio_postgres::{Config, Error, NoTls};
+
 type Result<T> = std::result::Result<T, error::Error>;
 
 const DB_POOL_MAX_OPEN: u64 = 32;
