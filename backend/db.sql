@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS pet
     color VARCHAR(255),
 
     CONSTRAINT fk_pet_owner_id FOREIGN KEY (owner_id) REFERENCES pet(id)
-)
+);

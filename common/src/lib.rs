@@ -1,13 +1,13 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Clone, PartialEq, Debug)]
-pub struct Owner{
+pub struct Owner {
     pub id: i32,
     pub name: String,
 }
 
 #[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
-pub struct OwnerRequest{
+pub struct OwnerRequest {
     pub name: String,
 }
 
@@ -21,7 +21,7 @@ impl OwnerResponse {
     pub fn of(owner: Owner) -> OwnerResponse {
         OwnerResponse {
             id: owner.id,
-            name: owner.name
+            name: owner.name,
         }
     }
 }
@@ -47,7 +47,7 @@ pub struct PetResponse {
     pub id: i32,
     pub name: String,
     pub animal_type: String,
-    pub color: Option<String>
+    pub color: Option<String>,
 }
 
 impl PetResponse {
@@ -56,7 +56,7 @@ impl PetResponse {
             id: pet.id,
             name: pet.name,
             animal_type: pet.animal_type,
-            color: pet.color
+            color: pet.color,
         }
     }
 }
